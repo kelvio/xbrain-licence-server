@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Xbrain</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <link rel="stylesheet" href="/css/semantic.min.css" />
+  <script type="text/javascript" src="/javascript/semantic.min.js" ></script>
+</head>
+<body>
+
+<p align="center">
+  <%= link_to home_index_path do %> <%= image_tag 'u4.jpg', :size => '400x179' %> <% end %>
+</p>
+
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<div style="width: 800px; margin: auto;">
+
+  <%= form_for(@licenca) do |f| %>
+
+      <div class="ui form">
+        <div class="ui labeled input">
+          <label><%= t('email') %></label>
+          <%= f.email_field :email, autofocus: true, :size => 32, :placeholder => 'Ex: user@email.com' %>
+        </div>
+
+        <br />
+        <br />
+
+        <div class="ui labeled input">
+          <label><%= t('name') %></label>
+          <%= f.text_field :nome, :size => 128, :placeholder => 'Ex: Henrique Alvez' %>
+        </div>
+
+      </div>
+      <br />
+      <div class="actions">
+        <div class="ui fluid buttons">
+          <%= f.submit t('get_licence_code'), :class => 'ui fluid positive button' %>
+        </div>
+      </div>
+
+  <% end %>
+
+
+</div>

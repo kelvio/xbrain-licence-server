@@ -15640,3 +15640,515 @@ Started GET "/assets/active_admin/orderable.png" for 127.0.0.1 at 2014-11-23 16:
 
 
 Started GET "/assets/active_admin/datepicker/datepicker-input-icon.png" for 127.0.0.1 at 2014-11-23 16:00:09 -0200
+
+
+Started GET "/ranking/index/+.xml" for 127.0.0.1 at 2014-11-23 17:58:32 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"+"}
+  [1m[35mJogo Load (1.7ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 20 OFFSET 0
+Completed 200 OK in 36ms (Views: 21.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/ranking/index/+.xml" for 127.0.0.1 at 2014-11-23 18:06:06 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"+"}
+  [1m[36mJogo Load (0.7ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 20 OFFSET 0[0m
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ranking/index/+.xml" for 127.0.0.1 at 2014-11-23 18:06:41 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"+"}
+  [1m[35mJogo Load (0.8ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 20 OFFSET 0
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ranking/index/+.xml?page=1" for 127.0.0.1 at 2014-11-23 18:10:00 -0200
+Processing by RankingController#index as XML
+  Parameters: {"page"=>"1", "operacao"=>"+"}
+  [1m[36mJogo Load (0.8ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 20 OFFSET 0[0m
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ranking/index/+.xml" for 127.0.0.1 at 2014-11-23 18:10:03 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"+"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 20 OFFSET 0
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index//.xml" for 127.0.0.1 at 2014-11-23 18:10:54 -0200
+
+ActionController::RoutingError (No route matches [GET] "/ranking/index/.xml"):
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma (2.8.2) lib/puma/server.rb:490:in `handle_request'
+  puma (2.8.2) lib/puma/server.rb:361:in `process_client'
+  puma (2.8.2) lib/puma/server.rb:254:in `block in run'
+  puma (2.8.2) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.8.2) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+  Rendered /home/kelvio/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/kelvio/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.2ms)
+  Rendered /home/kelvio/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (19.5ms)
+  Rendered /home/kelvio/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (77.9ms)
+
+
+Started GET "/ranking/index/%5C/.xml" for 127.0.0.1 at 2014-11-23 18:10:59 -0200
+
+ActionController::RoutingError (No route matches [GET] "/ranking/index/%5C/.xml"):
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma (2.8.2) lib/puma/server.rb:490:in `handle_request'
+  puma (2.8.2) lib/puma/server.rb:361:in `process_client'
+  puma (2.8.2) lib/puma/server.rb:254:in `block in run'
+  puma (2.8.2) lib/puma/thread_pool.rb:92:in `call'
+  puma (2.8.2) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+  Rendered /home/kelvio/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/kelvio/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.3ms)
+  Rendered /home/kelvio/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/kelvio/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.0ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:12:57 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.7ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:13:05 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:13:09 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.5ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:13:12 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:13:22 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[36mJogo Load (0.7ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:13:26 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[35mJogo Load (0.8ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 18ms (Views: 11.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:16:21 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.4ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:16:21 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.3ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:16:21 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.6ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:16:21 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.5ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:16:42 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.5ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:16:42 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:16:42 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.5ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:16:42 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.5ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:17:22 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.4ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:17:22 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.9ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:17:22 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.7ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:17:22 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.7ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:17:52 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.5ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:17:52 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.5ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:17:52 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.4ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:17:52 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.8ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:18:04 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.6ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:18:04 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:18:04 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.4ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:18:04 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.5ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:18:26 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.4ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:18:26 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:18:26 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.4ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:18:26 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:19:35 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.5ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:19:35 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (1.0ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:19:35 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.5ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:19:35 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:20:28 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.5ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:20:28 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:20:28 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.4ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:20:28 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:21:43 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.5ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:21:43 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.5ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:21:43 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.4ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:21:43 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:22:22 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.6ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:22:22 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.8ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:22:22 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.8ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:22:22 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.7ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:23:12 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.6ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:23:12 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.8ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:23:12 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.6ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:23:12 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.5ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:24:27 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[36mJogo Load (0.6ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+  [1m[35mJogo Count (0.6ms)[0m  SELECT COUNT(*) FROM (SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ) AS count_table
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:24:27 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[36mJogo Load (0.8ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:24:27 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[35mJogo Load (0.8ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:24:27 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[36mJogo Load (0.7ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ranking/index/soma.xml" for 127.0.0.1 at 2014-11-23 18:24:41 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"soma"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+  [1m[36mJogo Count (0.5ms)[0m  [1mSELECT COUNT(*) FROM (SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '+' ) AS count_table[0m
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/ranking/index/subtracao.xml" for 127.0.0.1 at 2014-11-23 18:24:41 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"subtracao"}
+  [1m[35mJogo Load (0.4ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '-' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ranking/index/multiplicacao.xml" for 127.0.0.1 at 2014-11-23 18:24:41 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"multiplicacao"}
+  [1m[36mJogo Load (0.5ms)[0m  [1mSELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '*' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ranking/index/divisao.xml" for 127.0.0.1 at 2014-11-23 18:24:41 -0200
+Processing by RankingController#index as XML
+  Parameters: {"operacao"=>"divisao"}
+  [1m[35mJogo Load (0.6ms)[0m  SELECT *, CASE WHEN pontuacao_jogador_a > pontuacao_jogador_b THEN pontuacao_jogador_a ELSE pontuacao_jogador_b END AS pontuacao_vencedor FROM jogos WHERE operacao LIKE '/' ORDER BY pontuacao_vencedor DESC  LIMIT 5 OFFSET 0
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.6ms)

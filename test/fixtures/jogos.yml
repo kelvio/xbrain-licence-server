@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jogador_a: MyString
+  jogador_b: MyString
+  pontuacao_jogador_a: 9.99
+  pontuacao_jogador_b: 9.99
+
+two:
+  jogador_a: MyString
+  jogador_b: MyString
+  pontuacao_jogador_a: 9.99
+  pontuacao_jogador_b: 9.99

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'ranking/index/:operacao', :to => 'ranking#index', :as => 'ranking_index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'licenca/get'
